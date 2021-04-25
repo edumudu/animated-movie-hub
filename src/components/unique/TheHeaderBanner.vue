@@ -4,9 +4,9 @@
     class="bg-indigo-100 py-8"
   >
     <div class="container mx-auto relative pb-14">
-      <h1 class="text-4xl text-center font-bold text-gray-800 mb-10">
+      <v-title class="text-center text-gray-800 mb-10">
         Lançamentos
-      </h1>
+      </v-title>
 
       <div
         class="flex overflow-hidden"
@@ -81,13 +81,11 @@
             >
               <b>Avaliação: </b>
 
-              <span class="text-yellow-300">
-                <fa-icon
-                  v-for="(type, i) in movie.rating"
-                  :key="i"
-                  :icon="[type, 'star']"
-                />
-              </span>
+              <rating-stars
+                class="animate-slide-left animate-delay"
+                :style="{ '--delay': (i + 1) * 1 }"
+                :rating="movie.rating"
+              />
             </div>
           </div>
         </div>
@@ -112,7 +110,15 @@
 <script lang="ts">
 import { defineComponent, ref } from 'vue';
 
+import RatingStars from '@/components/RatingStars.vue';
+import VTitle from '@/components/VTitle.vue';
+
 export default defineComponent({
+  components: {
+    RatingStars,
+    VTitle,
+  },
+
   setup() {
     const movies = [
       {
@@ -122,7 +128,7 @@ export default defineComponent({
         screenplay: ['Max Borenstein', 'Eric Pearson'],
         debut: 2021,
         cast: ['Millie Bobby', 'Alexander Skarsgård', 'Rebecca Hall', 'Brian Tyree', 'Henry Shun Oguri', 'Eiza Gonzalez', ' Julian Dennison'],
-        rating: ['fas', 'fas', 'fas', 'fas', 'far'],
+        rating: 4,
         traillerLink: 'https://www.youtube.com/embed/odM92ap8_c0',
       },
       {
@@ -132,7 +138,7 @@ export default defineComponent({
         screenplay: ['James Cameron'],
         debut: 2022,
         cast: ['Millie Bobby', 'Alexander Skarsgård', 'Rebecca Hall', 'Brian Tyree'],
-        rating: ['fas', 'fas', 'fas', 'far', 'far'],
+        rating: 3,
         traillerLink: 'https://www.youtube.com/embed/yUXd-enstO8',
       },
     ];

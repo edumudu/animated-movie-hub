@@ -5,9 +5,9 @@
     ref="root"
   >
     <div class="container mx-auto md:px-10 xl:px-40">
-      <h2 class="text-4xl font-bold animate-slide-left mb-10">
+      <v-title class="animate-slide-left mb-10">
         Ultimas avaliações
-      </h2>
+      </v-title>
 
       <div class="flex flex-wrap gap-y-10 justify-center md:justify-between">
         <div
@@ -42,16 +42,11 @@
             </p>
 
             <div class="text-sm flex justify-between">
-              <span
-                class="text-yellow-300 animate-slide-left animate-delay"
+              <rating-stars
+                class="animate-slide-left animate-delay"
                 :style="{ '--delay': (i + 1) * 1 }"
-              >
-                <fa-icon
-                  v-for="point in 5"
-                  :key="point"
-                  :icon="[point <= rating.rating ? 'fas' : 'far', 'star']"
-                />
-              </span>
+                :rating="rating.rating"
+              />
 
               <span
                 class="font-bold animate-slide-right animate-delay"
@@ -85,7 +80,15 @@
 <script lang="ts">
 import { defineComponent, ref, onMounted } from 'vue';
 
+import RatingStars from '@/components/RatingStars.vue';
+import VTitle from '@/components/VTitle.vue';
+
 export default defineComponent({
+  components: {
+    RatingStars,
+    VTitle,
+  },
+
   setup() {
     const ratings = [
       {

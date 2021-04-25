@@ -4,9 +4,9 @@
     class="bg-indigo-100"
   >
     <div class="container mx-auto px-2 md:px-10 xl:px-40 py-10">
-      <h2 class="text-4xl font-bold animate-slide-left">
+      <v-title class="animate-slide-left">
         Entrevistas & Making of
-      </h2>
+      </v-title>
 
       <div class="my-12 flex flex-wrap gap-y-10">
         <div
@@ -72,7 +72,11 @@
 <script lang="ts">
 import { defineComponent } from 'vue';
 
+import VTitle from '@/components/VTitle.vue';
+
 export default defineComponent({
+  components: { VTitle },
+
   setup() {
     const interviews = [
       {

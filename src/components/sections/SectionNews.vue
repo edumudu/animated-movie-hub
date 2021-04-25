@@ -5,9 +5,9 @@
   >
     <div class="container mx-auto md:px-10 xl:px-40 flex flex-wrap">
       <div class="lg:w-4/6 md:pr-8">
-        <h2 class="text-4xl font-bold animate-slide-left mb-6">
+        <v-title class="animate-slide-left mb-6">
           Novidades
-        </h2>
+        </v-title>
 
         <div>
           <article
@@ -49,9 +49,9 @@
       </div>
 
       <div class="lg:w-2/6">
-        <h2 class="text-4xl font-bold animate-slide-left mb-6">
+        <v-title class="animate-slide-left mb-6">
           Sobre
-        </h2>
+        </v-title>
 
         <p class="leading-5 text-sm">
           Netflix é uma provedora global de filmes e séries de televisão via streaming sediada em
@@ -60,9 +60,9 @@
           DVD pelo correio.
         </p>
 
-        <h2 class="text-4xl font-bold animate-slide-left my-6">
+        <v-title class="animate-slide-left my-6">
           Editorial
-        </h2>
+        </v-title>
 
         <ul>
           <li class="text-xl">
@@ -134,7 +134,10 @@
 <script lang="ts">
 import { defineComponent } from 'vue';
 
+import VTitle from '@/components/VTitle.vue';
+
 export default defineComponent({
+  components: { VTitle },
   setup() {
     const newsArr = [
       {

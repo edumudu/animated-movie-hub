@@ -5,9 +5,9 @@
   >
     <div class="container mx-auto md:px-10 xl:px-40">
       <div class="flex justify-between items-center mb-8">
-        <h2 class="text-4xl font-bold animate-slide-left">
+        <v-title class="animate-slide-left">
           Em destaque
-        </h2>
+        </v-title>
 
         <select class="combobox border rounded-md bg-transparent px-6 py-3 cursor-pointer">
           <option
@@ -55,7 +55,11 @@
 <script lang="ts">
 import { defineComponent } from 'vue';
 
+import VTitle from '@/components/VTitle.vue';
+
 export default defineComponent({
+  components: { VTitle },
+
   setup() {
     const images = [
       {
