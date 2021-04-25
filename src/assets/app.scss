@@ -1,3 +1,21 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+:root {
+  --back-bezier: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  --transition: 0.5s;
+}
+
+body,
+html { scroll-behavior: smooth; }
+
+.animate-delay {
+  --delay: 1;
+
+  animation-delay: calc(var(--delay) * var(--transition));
+}
+
+.aspect-16\/9 {
+  aspect-ratio: 16/9;
+}
