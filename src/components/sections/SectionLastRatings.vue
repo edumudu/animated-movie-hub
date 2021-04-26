@@ -60,18 +60,9 @@
       </div>
 
       <div class="text-right mt-10">
-        <button
-          class="rounded text-white bg-gray-700 p-2 font-semibold inline-flex items-center
-                 focus:outline-none focus:ring-4 focus:ring-gray-500 transition-colors
-                 hover:bg-gray-600"
-        >
-          <fa-icon
-            icon="plus"
-            class="mr-3"
-          />
-
+        <v-button icon="plus">
           Carregar mais avaliações
-        </button>
+        </v-button>
       </div>
     </div>
   </section>
@@ -82,11 +73,13 @@ import { defineComponent, ref, onMounted } from 'vue';
 
 import RatingStars from '@/components/RatingStars.vue';
 import VTitle from '@/components/VTitle.vue';
+import VButton from '@/components/VButton.vue';
 
 export default defineComponent({
   components: {
     RatingStars,
     VTitle,
+    VButton,
   },
 
   setup() {

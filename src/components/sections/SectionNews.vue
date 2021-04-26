@@ -38,9 +38,11 @@
                 <li
                   v-for="category in news.categories"
                   :key="category"
-                  class="rounded-full bg-green-600 text-white font-semibold px-4 py-1 text-sm mr-4"
+                  class="mr-4"
                 >
-                  {{ category }}
+                  <v-badge>
+                    {{ category }}
+                  </v-badge>
                 </li>
               </ul>
             </div>
@@ -135,9 +137,14 @@
 import { defineComponent } from 'vue';
 
 import VTitle from '@/components/VTitle.vue';
+import VBadge from '@/components/VBadge.vue';
 
 export default defineComponent({
-  components: { VTitle },
+  components: {
+    VTitle,
+    VBadge,
+  },
+
   setup() {
     const newsArr = [
       {
