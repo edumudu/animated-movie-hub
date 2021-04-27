@@ -4,35 +4,41 @@
     class="py-8 px-2"
   >
     <div class="container mx-auto md:px-10 xl:px-40">
-      <div class="flex justify-between items-center mb-8">
-        <v-title class="animate-slide-left">
-          Em destaque
-        </v-title>
-
-        <select class="combobox border rounded-md bg-transparent px-6 py-3 cursor-pointer">
-          <option
-            v-for="category in categories"
-            :key="category"
+      <animate-when-intersect v-slot="{ animate }">
+        <div class="flex justify-between items-center mb-8">
+          <v-title
+            class="animate-slide-left"
+            :ref="animate"
           >
-            {{ category }}
-          </option>
-        </select>
-      </div>
+            Em destaque
+          </v-title>
 
-      <div class="flex flex-wrap gap-20 items-center justify-center xl:justify-between">
-        <img
-          v-for="(image, i) in images"
-          :key="image.alt"
-          alt="Movie 1"
-          loading="lazy"
-          width="250"
-          height="350"
-          class="rounded w-60 shadow-xl animate-slide-up animate-delay transition-transform
+          <select class="combobox border rounded-md bg-transparent px-6 py-3 cursor-pointer">
+            <option
+              v-for="category in categories"
+              :key="category"
+            >
+              {{ category }}
+            </option>
+          </select>
+        </div>
+
+        <div class="flex flex-wrap gap-20 items-center justify-center xl:justify-between">
+          <img
+            v-for="(image, i) in images"
+            :key="image.alt"
+            alt="Movie 1"
+            loading="lazy"
+            width="250"
+            height="350"
+            class="rounded w-60 shadow-xl animate-slide-up animate-delay transition-transform
                  duration-200 transform hover:scale-110"
-          :src="image.src"
-          :style="{ '--delay': i * 0.8 + 0.8 }"
-        >
-      </div>
+            :ref="animate"
+            :src="image.src"
+            :style="{ '--delay': i * 0.8 + 0.8 }"
+          >
+        </div>
+      </animate-when-intersect>
 
       <div class="text-right mt-10">
         <v-button icon="plus">
@@ -48,11 +54,13 @@ import { defineComponent } from 'vue';
 
 import VTitle from '@/components/VTitle.vue';
 import VButton from '@/components/VButton.vue';
+import AnimateWhenIntersect from '@/components/AnimateWhenIntersect.vue';
 
 export default defineComponent({
   components: {
     VTitle,
     VButton,
+    AnimateWhenIntersect,
   },
 
   setup() {
