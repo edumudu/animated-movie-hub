@@ -1,5 +1,6 @@
 module.exports = {
   lintOnSave: false,
+  publicPath: process.env.NODE_ENV === 'production' ? '/animated-movie-hub/' : '/',
 
   chainWebpack: (config) => {
     const svgRule = config.module.rule('svg');

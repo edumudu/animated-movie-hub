@@ -3,8 +3,11 @@
     id="last-ratings"
     class="pt-4 pb-8 px-2 overflow-x-hidden"
   >
-    <div class="container mx-auto md:px-10 xl:px-40">
-      <animate-when-intersect v-slot="{ animate }">
+    <animate-when-intersect v-slot="{ animate, animationTrigger }">
+      <div
+        class="container mx-auto md:px-10 xl:px-40"
+        :ref="animationTrigger"
+      >
         <v-title
           class="animate-slide-left mb-10"
           :ref="animate"
@@ -68,12 +71,17 @@
         </div>
 
         <div class="text-right mt-10">
-          <v-button icon="plus">
+          <v-button
+            icon="plus"
+            class="animate-slide-left animate-delay"
+            style="--delay: 3"
+            :ref="animate"
+          >
             Carregar mais avaliações
           </v-button>
         </div>
-      </animate-when-intersect>
-    </div>
+      </div>
+    </animate-when-intersect>
   </section>
 </template>
 

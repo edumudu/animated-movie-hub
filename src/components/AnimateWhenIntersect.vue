@@ -14,10 +14,13 @@ const useAnimationsInScroll = () => {
     entries.forEach((entry) => {
       if (!entry.isIntersecting) return;
 
-      const el = entry.target as HTMLElement;
+      elsToAnimate.forEach((elToAnimate) => {
+        const el = elToAnimate;
 
-      el.style.animationPlayState = 'running';
-      intersectionObserver.unobserve(el);
+        el.style.animationPlayState = 'running';
+      });
+
+      intersectionObserver.disconnect();
     });
   }, observerOptions);
 
@@ -28,23 +31,34 @@ const useAnimationsInScroll = () => {
 
     elsToAnimate.push(el);
     el.style.animationPlayState = 'paused';
-    intersectionObserver.observe(el);
+  };
+
+  const animationTrigger = (node: HTMLElement | { $el: HTMLElement }) => {
+    if (!node) return;
+
+    intersectionObserver.observe('$el' in node ? node.$el : node);
   };
 
   onBeforeUpdate(() => {
     elsToAnimate = [];
   });
 
-  return { animate };
+  return {
+    animate,
+    animationTrigger,
+  };
 };
 
 export default defineComponent({
   setup(props, { slots }) {
-    const { animate } = useAnimationsInScroll();
+    const { animate, animationTrigger } = useAnimationsInScroll();
 
     // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     /// @ts-ignore
-    return () => slots.default({ animate });
+    return () => slots.default({
+      animate,
+      animationTrigger,
+    });
   },
 });
 </script>

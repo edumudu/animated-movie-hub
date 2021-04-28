@@ -3,8 +3,11 @@
     id="highlights"
     class="py-8 px-2"
   >
-    <div class="container mx-auto md:px-10 xl:px-40">
-      <animate-when-intersect v-slot="{ animate }">
+    <animate-when-intersect v-slot="{ animate, animationTrigger }">
+      <div
+        class="container mx-auto md:px-10 xl:px-40"
+        :ref="animationTrigger"
+      >
         <div class="flex justify-between items-center mb-8">
           <v-title
             class="animate-slide-left"
@@ -38,14 +41,19 @@
             :style="{ '--delay': i * 0.8 + 0.8 }"
           >
         </div>
-      </animate-when-intersect>
 
-      <div class="text-right mt-10">
-        <v-button icon="plus">
-          Carregar mais filmes
-        </v-button>
+        <div class="text-right mt-10">
+          <v-button
+            icon="plus"
+            class="animate-slide-up animate-delay"
+            style="--delay: 3"
+            :ref="animate"
+          >
+            Carregar mais filmes
+          </v-button>
+        </div>
       </div>
-    </div>
+    </animate-when-intersect>
   </section>
 </template>
 
