@@ -9,8 +9,8 @@
       </v-title>
 
       <div
-        class="flex overflow-hidden"
         ref="bannersWrapper"
+        class="flex overflow-hidden"
       >
         <div
           v-for="movie in movies"

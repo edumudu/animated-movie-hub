@@ -32,8 +32,8 @@
           </button>
 
           <ul
-            class="flex flex-col text-sm text-center transition-all h-0 overflow-hidden"
             ref="mobileMenu"
+            class="flex flex-col text-sm text-center transition-all h-0 overflow-hidden"
           >
             <li
               v-for="menu in menus"

@@ -6,12 +6,12 @@
     <div class="container mx-auto md:px-10 xl:px-40 flex flex-wrap">
       <animate-when-intersect v-slot="{ animate, animationTrigger }">
         <div
-          class="lg:w-4/6 md:pr-8"
           :ref="animationTrigger"
+          class="lg:w-4/6 md:pr-8"
         >
           <v-title
-            class="animate-slide-left mb-6"
             :ref="animate"
+            class="animate-slide-left mb-6"
           >
             Novidades
           </v-title>
@@ -24,28 +24,28 @@
               :class="{ 'border-t-2': i !== 0 }"
             >
               <img
+                :ref="animate"
                 alt="Article"
                 loading="lazy"
                 width="250"
                 height="150"
                 class="mr-4 rounded animate-slide-up animate-delay"
                 :style="{ '--delay': 0.7 * i }"
-                :ref="animate"
                 :src="news.image"
               >
 
               <div class="flex flex-col">
                 <h3
-                  class="font-bold text-2xl animate-slide-right animate-delay"
                   :ref="animate"
+                  class="font-bold text-2xl animate-slide-right animate-delay"
                   :style="{ '--delay': 1 * i }"
                 >
                   {{ news.title }}
                 </h3>
 
                 <p
-                  class="flex-1 text-sm leading-4 my-2 animate-slide-up animate-delay"
                   :ref="animate"
+                  class="flex-1 text-sm leading-4 my-2 animate-slide-up animate-delay"
                   :style="{ '--delay': 1.5 * i }"
                 >
                   {{ news.resume }}
@@ -55,8 +55,8 @@
                   <li
                     v-for="(category, j) in news.categories"
                     :key="category"
-                    class="mr-4 animate-slide-right animate-delay"
                     :ref="animate"
+                    class="mr-4 animate-slide-right animate-delay"
                     :style="{ '--delay': (1.5 * i) + (j * 0.5) }"
                   >
                     <v-badge>
@@ -72,20 +72,20 @@
 
       <animate-when-intersect v-slot="{ animate, animationTrigger }">
         <div
-          class="lg:w-2/6"
           :ref="animationTrigger"
+          class="lg:w-2/6"
         >
           <v-title
-            class="animate-slide-right mb-6"
             :ref="animate"
+            class="animate-slide-right mb-6"
           >
             Sobre
           </v-title>
 
           <p
+            :ref="animate"
             class="leading-5 text-sm animate-slide-up animate-delay"
             style="--delay: 0.8"
-            :ref="animate"
           >
             Netflix é uma provedora global de filmes e séries de televisão via streaming sediada em
             Los Gatos,Califórnia, e que atualmente possui mais de 208 milhões de assinantes.
@@ -94,9 +94,9 @@
           </p>
 
           <v-title
+            :ref="animate"
             class="animate-slide-right animate-delay my-6"
             style="--delay: 1.2"
-            :ref="animate"
           >
             Editorial
           </v-title>
@@ -104,16 +104,16 @@
           <ul>
             <li class="text-xl">
               <fa-icon
+                :ref="animate"
                 icon="user"
                 class="mr-2 animate-slide-left animate-delay"
                 style="--delay: 1.5"
-                :ref="animate"
               />
 
               <span
+                :ref="animate"
                 class="animate-slide-up animate-delay inline-block"
                 style="--delay: 1.5"
-                :ref="animate"
               >
                 <b>Redação: </b> Carlos Almeida
               </span>
@@ -121,16 +121,16 @@
 
             <li class="text-xl my-4">
               <fa-icon
+                :ref="animate"
                 icon="user"
                 class="mr-2 animate-slide-left animate-delay"
                 style="--delay: 1.7"
-                :ref="animate"
               />
 
               <span
+                :ref="animate"
                 class="animate-slide-up animate-delay inline-block"
                 style="--delay: 1.7"
-                :ref="animate"
               >
                 <b>Pesquisa: </b> Letícia Mariana
               </span>
@@ -138,15 +138,15 @@
 
             <li class="text-xl">
               <fa-icon
+                :ref="animate"
                 icon="user"
                 class="mr-2 animate-slide-left animate-delay"
                 style="--delay: 1.9"
-                :ref="animate"
               />
               <span
+                :ref="animate"
                 class="animate-slide-up animate-delay inline-block"
                 style="--delay: 1.9"
-                :ref="animate"
               >
                 <b>Gerente Geral: </b> Maria eduardo
               </span>
@@ -154,9 +154,9 @@
           </ul>
 
           <h2
+            :ref="animate"
             class="text-2xl font-bold animate-slide-left animate-delay my-6"
             style="--delay: 2.1"
-            :ref="animate"
           >
             Redes sociais
           </h2>
@@ -165,10 +165,10 @@
             <li class="mr-5 transition-transform transform hover:scale-125">
               <a href="//facebook.com">
                 <fa-icon
+                  :ref="animate"
                   class="mr-2 animate-slide-right animate-delay"
                   style="--delay: 2.3"
                   :icon="['fab', 'facebook-square']"
-                  :ref="animate"
                 />
               </a>
             </li>
@@ -176,10 +176,10 @@
             <li class="mr-5 transition-transform transform hover:scale-125">
               <a href="//twitter.com">
                 <fa-icon
+                  :ref="animate"
                   class="mr-2 animate-slide-right animate-delay"
                   style="--delay: 2.5"
                   :icon="['fab', 'twitter']"
-                  :ref="animate"
                 />
               </a>
             </li>
@@ -187,10 +187,10 @@
             <li class="mr-5 transition-transform transform hover:scale-125">
               <a href="//instagram.com">
                 <fa-icon
+                  :ref="animate"
                   class="mr-2 animate-slide-right animate-delay"
                   style="--delay: 2.7"
                   :icon="['fab', 'instagram']"
-                  :ref="animate"
                 />
               </a>
             </li>

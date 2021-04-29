@@ -5,13 +5,13 @@
   >
     <animate-when-intersect v-slot="{ animate, animationTrigger }">
       <div
-        class="container mx-auto md:px-10 xl:px-40"
         :ref="animationTrigger"
+        class="container mx-auto md:px-10 xl:px-40"
       >
         <div class="flex justify-between items-center mb-8">
           <v-title
-            class="animate-slide-left"
             :ref="animate"
+            class="animate-slide-left"
           >
             Em destaque
           </v-title>
@@ -30,13 +30,13 @@
           <img
             v-for="(image, i) in images"
             :key="image.alt"
+            :ref="animate"
             alt="Movie 1"
             loading="lazy"
             width="250"
             height="350"
             class="rounded w-60 shadow-xl animate-slide-up animate-delay transition-transform
                  duration-200 transform hover:scale-110"
-            :ref="animate"
             :src="image.src"
             :style="{ '--delay': i * 0.8 + 0.8 }"
           >
@@ -44,10 +44,10 @@
 
         <div class="text-right mt-10">
           <v-button
+            :ref="animate"
             icon="plus"
             class="animate-slide-up animate-delay"
             style="--delay: 3"
-            :ref="animate"
           >
             Carregar mais filmes
           </v-button>

@@ -5,12 +5,12 @@
   >
     <animate-when-intersect v-slot="{ animate, animationTrigger }">
       <div
-        class="container mx-auto md:px-10 xl:px-40"
         :ref="animationTrigger"
+        class="container mx-auto md:px-10 xl:px-40"
       >
         <v-title
-          class="animate-slide-left mb-10"
           :ref="animate"
+          class="animate-slide-left mb-10"
         >
           Ultimas avaliações
         </v-title>
@@ -23,8 +23,8 @@
           >
             <div>
               <img
-                class="w-16 h-16 rounded-full shadow-lg animate-spin-grow animate-delay"
                 :ref="animate"
+                class="w-16 h-16 rounded-full shadow-lg animate-spin-grow animate-delay"
                 :style="{ '--delay': (i + 1) * 0.4 }"
                 :alt="rating.name"
                 :src="rating.image"
@@ -33,16 +33,16 @@
 
             <div class="flex-1 flex flex-col ml-6">
               <h3
-                class="font-extrabold text-3xl animate-slide-left animate-delay"
                 :ref="animate"
+                class="font-extrabold text-3xl animate-slide-left animate-delay"
                 :style="{ '--delay': (i + 1) * 0.6 }"
               >
                 {{ rating.name }}
               </h3>
 
               <p
-                class="my-6 leading-5 animate-slide-up animate-delay flex-1"
                 :ref="animate"
+                class="my-6 leading-5 animate-slide-up animate-delay flex-1"
                 :style="{ '--delay': (i + 1) * 0.8 }"
               >
                 <b>Avaliação: </b>
@@ -52,15 +52,15 @@
 
               <div class="text-sm flex justify-between">
                 <rating-stars
-                  class="animate-slide-left animate-delay"
                   :ref="animate"
+                  class="animate-slide-left animate-delay"
                   :style="{ '--delay': (i + 1) * 1 }"
                   :rating="rating.rating"
                 />
 
                 <span
-                  class="font-bold animate-slide-right animate-delay"
                   :ref="animate"
+                  class="font-bold animate-slide-right animate-delay"
                   :style="{ '--delay': (i + 1) * 1 }"
                 >
                   {{ rating.createdAt }}
@@ -72,10 +72,10 @@
 
         <div class="text-right mt-10">
           <v-button
+            :ref="animate"
             icon="plus"
             class="animate-slide-left animate-delay"
             style="--delay: 3"
-            :ref="animate"
           >
             Carregar mais avaliações
           </v-button>
